@@ -9,4 +9,4 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-Head over to [http:localhost:8000/admin](http:localhost:8000/admin) and sign in with our admin credential (defined above). 
+Head over to [http:localhost:8000/admin](http:localhost:8000/admin) and sign in with your admin credential (defined above). 
