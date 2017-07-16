@@ -8,3 +8,5 @@ python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
 ```
+
+Head over to http:localhost:8000/admin and sign in with our admin credential (defined above). 
