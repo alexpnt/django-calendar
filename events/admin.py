@@ -2,15 +2,16 @@
 from __future__ import unicode_literals
 
 from django.contrib import admin
-from models import Event
+from events.models import Event
 import datetime
 import calendar
-from django.core.urlresolvers import reverse
+from django.shortcuts import reverse
 from django.utils.safestring import mark_safe
-from utils import EventCalendar
+from events.utils import EventCalendar
 
 # Register your models here.
 
+@admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
     list_display = ['day', 'start_time', 'end_time', 'notes']
     change_list_template = 'admin/events/change_list.html'
@@ -49,4 +50,3 @@ class EventAdmin(admin.ModelAdmin):
         extra_context['calendar'] = mark_safe(html_calendar)
         return super(EventAdmin, self).changelist_view(request, extra_context)
 
-admin.site.register(Event, EventAdmin)
